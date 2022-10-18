@@ -63,7 +63,7 @@ class PID:
         return p+i+d
 
 
-if __name__ == "__main__":
+def main():
     # controler = PID()
     u = np.zeros(1000)
     u[0] = 10

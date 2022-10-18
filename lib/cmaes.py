@@ -1,6 +1,5 @@
 import numpy as np
-from simulate import SecondOrderSystem, PID
-
+from .simulate import SecondOrderSystem, PID
 
 class CMAES(object):
     """CMA Evolution Strategy with CSA"""

@@ -1,8 +1,8 @@
 import numpy as np
 from matplotlib import pyplot as plt
 
-from simulate import SecondOrderSystem, PID
-from cmaes import CMAES
+from lib.simulate import SecondOrderSystem, PID
+from lib.cmaes import CMAES
 
 
 
