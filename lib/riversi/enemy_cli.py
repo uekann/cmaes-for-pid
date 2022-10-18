@@ -2,6 +2,7 @@ import random
 from abc import ABCMeta, abstractmethod
 import pandas as pd
 import numpy as np
+from time import sleep
 
 from .borad_cli import RiversiBoard, BitBoard
 
@@ -18,12 +19,15 @@ class BaseEnemy(metaclass=ABCMeta):
 
 
 class RandomEnemy(BaseEnemy):
-    def __init__(self, color: int) -> None:
+    def __init__(self, color: int, delay:int = 0) -> None:
         super().__init__(color)
+        self.delay = delay
     
     def action(self, rb: "RiversiBoard") -> tuple:
         places = rb.get_places_to_put(self.color)
         assert places.count_bit() > 0
+        
+        sleep(self.delay)
         
         if places.count_bit() == 1:
             return list(places)[0]
